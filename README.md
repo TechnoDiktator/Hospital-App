@@ -4,10 +4,10 @@
 
 
 
-###Stack- Java (JSP Servlet JDBC) , Mysql
-###IDE-Eclipse 
-###Database - Workbench MySQL
-###A website which serves as a hospital functions website
+### Stack- Java (JSP Servlet JDBC) , Mysql
+### IDE-Eclipse 
+### Database - Workbench MySQL
+### A website which serves as a hospital functions website
 
 Frontend – Html , CSS, Bootstrap , JavaScript, Bootstrap
 Backend – Servlet , JDBC
