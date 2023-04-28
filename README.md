@@ -1,5 +1,5 @@
 # Hospital-App
-# This is a J2EE fullstack Hospital Management App
+# This is a J2EE fullstack Hospital Management App I Created 
 ### One of the first projects i made in Core Java
 
 
