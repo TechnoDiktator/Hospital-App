@@ -229,7 +229,7 @@ mvn clean install
 
 5. Deploy the application on Tomcat server
 
-## Database Setup
+## Database Setup (loacl)
 
 1. Install MySQL Workbench
 2. Create a new database
