@@ -83,23 +83,29 @@ CREATE TABLE specialist (
 );
 
 -- Appointment table
+USE hospitaldb;
+
+-- Drop and recreate appointment table with correct column names
+DROP TABLE IF EXISTS appointment;
 CREATE TABLE appointment (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
-    full_name VARCHAR(255),
-    gender VARCHAR(255),
-    age VARCHAR(255),
-    appoint_date VARCHAR(255),
+    fullname VARCHAR(255),    -- Changed from full_name to fullname
+    gender VARCHAR(50),
+    age VARCHAR(10),
+    appoint_date VARCHAR(100),
     email VARCHAR(255),
-    phno VARCHAR(255),
+    phno VARCHAR(20),
     diseases VARCHAR(255),
     doctor_id INT,
-    address VARCHAR(255),
-    status VARCHAR(255)
+    address VARCHAR(500),
+    status VARCHAR(50),
+    FOREIGN KEY (user_id) REFERENCES user_dtls(id),
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id)
 );
 
 -- Insert default admin user
-INSERT INTO admin(email, password) VALUES('admin@hospital', 'admin123');
+INSERT INTO admin(email, password) VALUES('admin@hospital.com', 'admin123');
 ```
 
 ## Project Setup
@@ -153,6 +159,7 @@ http://localhost:8080/Hospital_Management
 
 
 
+
 ## Features
 
 ### User Management
@@ -183,12 +190,26 @@ http://localhost:8080/Hospital_Management
 
 ## Screenshots
 
+### Homepage
 ![alt text](homehospital.png)
 
 
+### Add Docter
+![alt text](AddDoctor.png)
 
+### Added Doctors
+![alt text](<Screenshot from 2025-10-26 13-21-16.png>)
 
+## Create Appointment For Valid user
+![alt text](image.png)
 
+## View Appointment
+![alt text](image-1.png)
+
+## Doctor can see patient status and update 
+![alt text](image-2.png)
+
+![alt text](image-3.png)
 
 ## Installation
 

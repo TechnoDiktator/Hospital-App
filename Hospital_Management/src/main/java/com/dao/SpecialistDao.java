@@ -17,6 +17,7 @@ public class SpecialistDao {
 	public SpecialistDao(Connection conn) {
 		super();
 		this.conn = conn;
+		System.out.println("SpecialistDao connection: " + (conn != null));
 	}
 
 	public boolean addSpecialist(String specialistname) {
@@ -51,7 +52,7 @@ public class SpecialistDao {
 			while (rs.next()) {
 				s = new Specialist();
 				s.setId(rs.getInt(1));
-				s.setSpecialistName(rs.getString(2));
+				s.setSpecialistName(rs.getString("spec_name"));
 				list.add(s);
 			}
 

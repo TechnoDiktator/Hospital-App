@@ -21,7 +21,7 @@ public class DbConnect {
             conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/hospitaldb", 
                 "hospital_admin", 
-                "hospital123"
+                "ptLXu\"Y6G7FD*i6"
             );
 
 		} catch (Exception e) {

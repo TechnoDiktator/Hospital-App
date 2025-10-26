@@ -31,14 +31,15 @@ public class AdminLogin extends HttpServlet {
 			
 			
 			//so if in the user login page the email and passord is that of an admin then we will be allowed to go to the admin page
-			if ("admin@hospital".equals(email) && "admin123".equals(password)) {
-				
+			if ("admin@hospital.com".equals(email) && "admin123".equals(password)) {
+				System.out.println("==================CORRECT ADMIN CREDENTIALS==================");
 				//we are creating a new session attribute corresponding to the admin in which the admin
 				session.setAttribute("adminObj", new User());
 				resp.sendRedirect("admin/index.jsp");   //going to the admin folders index page
-				
+				System.out.println("==================REDIRECTING TO ADMIN INDEX PAGE==================");
 				
 			} else {
+				System.out.println("somethings wrong");
 				
 				session.setAttribute("errMsg", "invalid email & password");
 				resp.sendRedirect("admin_login.jsp");
