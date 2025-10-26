@@ -23,6 +23,136 @@ A full-stack J2EE Hospital Management Application that handles hospital operatio
 - Build Tool: Maven
 - Server: Apache Tomcat
 
+## Prerequisites
+
+- JDK 8 or higher
+- Maven 3.x
+- MySQL 8.x
+- Tomcat 8.x or higher
+
+## Database Setup
+
+1. Login to MySQL:
+```sql
+mysql -u root -p
+```
+
+2. Create Database and User:
+```sql
+CREATE DATABASE hospitaldb;
+CREATE USER 'hospital_admin'@'localhost' IDENTIFIED BY 'Hospital@123';
+GRANT ALL PRIVILEGES ON hospitaldb.* TO 'hospital_admin'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+3. Create Tables:
+```sql
+USE hospitaldb;
+
+-- Admin table
+CREATE TABLE admin (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
+
+-- User/Patient table
+CREATE TABLE user_dtls (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
+
+-- Doctor table
+CREATE TABLE doctor (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(255),
+    dob VARCHAR(255),
+    qualification VARCHAR(255),
+    specialist VARCHAR(255),
+    email VARCHAR(255),
+    mobno VARCHAR(255),
+    password VARCHAR(255)
+);
+
+-- Specialist table
+CREATE TABLE specialist (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    spec_name VARCHAR(255)
+);
+
+-- Appointment table
+CREATE TABLE appointment (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    full_name VARCHAR(255),
+    gender VARCHAR(255),
+    age VARCHAR(255),
+    appoint_date VARCHAR(255),
+    email VARCHAR(255),
+    phno VARCHAR(255),
+    diseases VARCHAR(255),
+    doctor_id INT,
+    address VARCHAR(255),
+    status VARCHAR(255)
+);
+
+-- Insert default admin user
+INSERT INTO admin(email, password) VALUES('admin@hospital', 'admin123');
+```
+
+## Project Setup
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd Hospital-App
+```
+
+2. Import project in Eclipse/VS Code as Maven project
+
+3. Update database configuration in `src/main/java/com/db/DbConnect.java`:
+```java
+conn = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/hospitaldb", 
+    "hospital_admin", 
+    "Hospital@123"
+);
+```
+
+4. Build the project:
+```bash
+mvn clean install
+```
+
+5. Run using Tomcat:
+```bash
+mvn tomcat7:run
+```
+
+6. Access the application:
+```
+http://localhost:8080/Hospital_Management
+```
+
+## Default Credentials
+
+### Admin Login
+- URL: `/admin_login.jsp`
+- Email: admin@hospital
+- Password: admin123
+
+### Doctor Login
+- URL: `/doctor_login.jsp`
+- Create doctor account through admin panel
+
+### Patient Login
+- URL: `/user_login.jsp`
+- Register new patient account
+
+
+
 ## Features
 
 ### User Management
@@ -88,6 +218,3 @@ mvn clean install
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
