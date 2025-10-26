@@ -1,27 +1,84 @@
-# Hospital-App
-# This is a J2EE fullstack Hospital Management App I Created 
-### One of the first projects i made in Core Java
+# Hospital Management System
 
+A full-stack J2EE Hospital Management Application that handles hospital operations, appointments, and user management.
 
+## Technology Stack
 
-### Stack- Java (JSP Servlet JDBC) , Mysql
-### IDE-Eclipse 
-### Database - Workbench MySQL
-### A website which serves as a hospital functions website
+### Backend
+- Java (J2EE)
+  - JSP (JavaServer Pages)
+  - Servlets
+  - JDBC
+- MySQL Database
 
-Frontend – Html , CSS, Bootstrap , JavaScript, Bootstrap
-Backend – Servlet , JDBC
-Database – MySQL
+### Frontend
+- HTML5 
+- CSS3
+- JavaScript
+- Bootstrap
 
+### Development Tools
+- IDE: Eclipse
+- Database: MySQL Workbench
+- Build Tool: Maven
+- Server: Apache Tomcat
 
-Modules - 
+## Features
 
-Register Modeule for User ,   Doctor  , Admin , Patient , Appointment and CRUD Operations for the same
+### User Management
+- Multi-user authentication system (Admin, Doctor, Patient)
+- User registration and login/logout functionality
+- Profile management and password updates
+- Role-based access control
 
-Login/Logout Module for all the entities ( user  , admin , doctor ) 
+### Appointment System
+- Book appointments with doctors
+- View and manage appointment schedules
+- Doctor availability tracking
 
-Module - for booking appointments,viewing appointments with specific doctors
+### Admin Dashboard
+- Doctor profile management (CRUD operations)
+- View and manage appointments
+- User management capabilities
 
-Module for editing and updating entity profiles , changing password and other entity properties
+### Doctor Features
+- View assigned appointments
+- Manage availability
+- Update profile information
 
-Admin Page for changing  , creating  , viewing doctor profiles as well as their appointments
+### Patient Features
+- Book appointments
+- View appointment history
+- Update personal information
+
+## Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/Hospital-App.git
+```
+
+2. Import the project in Eclipse as a Maven project
+
+3. Update Maven dependencies
+```bash
+mvn clean install
+```
+
+4. Configure MySQL database connection
+
+5. Deploy the application on Tomcat server
+
+## Database Setup
+
+1. Install MySQL Workbench
+2. Create a new database
+3. Configure the database connection properties in the application
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
