@@ -31,7 +31,7 @@ public class AdminLogin extends HttpServlet {
 			
 			
 			//so if in the user login page the email and passord is that of an admin then we will be allowed to go to the admin page
-			if ("rastogitarang5@gmail.com".equals(email) && "tarang1997".equals(password)) {
+			if ("admin@hospital".equals(email) && "admin123".equals(password)) {
 				
 				//we are creating a new session attribute corresponding to the admin in which the admin
 				session.setAttribute("adminObj", new User());

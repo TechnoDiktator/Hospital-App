@@ -51,6 +51,15 @@ A full-stack J2EE Hospital Management Application that handles hospital operatio
 - View appointment history
 - Update personal information
 
+## Screenshots
+
+![alt text](homehospital.png)
+
+
+
+
+
+
 ## Installation
 
 1. Clone the repository
